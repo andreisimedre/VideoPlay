@@ -7,7 +7,8 @@
 
 import Foundation
 
-actor NetworkService: ObservableObject, Sendable {
+@MainActor
+class NetworkService: ObservableObject, Sendable {
     let API_KEY = "uNJYRoKEQnumNABpnjaN0h9KCgi5h17gcI0gVySNa4oVcNRWNFf7MYns"
     let baseURL = "https://api.pexels.com/videos/search?query="
 
@@ -21,7 +22,6 @@ actor NetworkService: ObservableObject, Sendable {
     }
 
     init() {
-
         Task.init {
             try? await getVideos(query: selectedQuery.rawValue)
         }
@@ -43,10 +43,8 @@ actor NetworkService: ObservableObject, Sendable {
 
             let decodedData = try decoder.decode(ResponseBody.self, from: data)
 
-            DispatchQueue.main.async {
-                self.videos = []
-                self.videos = decodedData.videos
-            }
+            self.videos = []
+            self.videos = decodedData.videos
 
         } catch {
             print("Error fetching data from Pexels: \(error)")
