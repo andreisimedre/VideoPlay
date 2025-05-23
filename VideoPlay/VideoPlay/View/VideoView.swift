@@ -21,6 +21,9 @@ struct VideoView: View {
                     player.play()
                 }
             }
+            .onDisappear {
+                player.pause()
+            }
     }
 }
 

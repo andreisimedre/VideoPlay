@@ -30,8 +30,8 @@
             filePath = "VideoPlay/Networking/NetworkService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "getVideos(query:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -50,50 +50,6 @@
             endingLineNumber = "19"
             landmarkName = "body"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "E2958875-24C3-4AF6-BF3C-5FE0FDE0DC25 - 1ac58b8cf6c990a5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in VideoPlay.VideoView.body.getter : some"
-                  moduleName = "VideoPlay.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andreisimedre/Playground/VideoPlay/VideoPlay/VideoPlay/View/VideoView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19">
-               </Location>
-               <Location
-                  uuid = "E2958875-24C3-4AF6-BF3C-5FE0FDE0DC25 - 1ac58b8cf6c990a5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in VideoPlay.VideoView.body.getter : some"
-                  moduleName = "VideoPlay.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andreisimedre/Playground/VideoPlay/VideoPlay/VideoPlay/View/VideoView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19">
-               </Location>
-               <Location
-                  uuid = "E2958875-24C3-4AF6-BF3C-5FE0FDE0DC25 - 1ac58b8cf6c990a5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in VideoPlay.VideoView.body.getter : some"
-                  moduleName = "VideoPlay.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andreisimedre/Playground/VideoPlay/VideoPlay/VideoPlay/View/VideoView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
