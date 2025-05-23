@@ -42,8 +42,11 @@ actor NetworkService: ObservableObject, Sendable {
             decoder.keyDecodingStrategy = .convertFromSnakeCase
 
             let decodedData = try decoder.decode(ResponseBody.self, from: data)
-            self.videos = []
-            self.videos = decodedData.videos
+
+            DispatchQueue.main.async {
+                self.videos = []
+                self.videos = decodedData.videos
+            }
 
         } catch {
             print("Error fetching data from Pexels: \(error)")

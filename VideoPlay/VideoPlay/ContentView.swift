@@ -23,8 +23,11 @@ struct ContentView: View {
                                 }
                         }
                     }
+                    .padding(.horizontal)
+                    .padding(.top, 10)
                 }
-                
+                .scrollIndicators(.hidden)
+
                 ScrollView {
                     if networkService.videos.isEmpty {
                         ProgressView()
