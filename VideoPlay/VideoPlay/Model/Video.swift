@@ -10,8 +10,6 @@ import Foundation
 struct ResponseBody: Codable {
     let page: Int
     let perPage: Int
-    let totalResults: Int
-    let url: String
     let videos: [Video]
 }
 
@@ -19,7 +17,7 @@ struct ResponseBody: Codable {
 struct Video: Codable {
     let id: Int
     let width: Int
-        let height: Int
+    let height: Int
     let url: String
     let image: String
     let duration: Int
@@ -29,8 +27,8 @@ struct Video: Codable {
 
     enum CodingKeys: String, CodingKey {
         case id, width, height, url, image, duration, user
-        case videoFiles = "video_files"
-        case videoPictures = "video_pictures"
+        case videoFiles
+        case videoPictures
     }
 }
 
@@ -44,13 +42,14 @@ struct User: Codable {
 // MARK: - VideoFile
 struct VideoFile: Codable {
     let id: Int
-    let quality, fileType: String
+    let quality: String?
+    let fileType: String
     let width, height: Int?
     let link: String
 
     enum CodingKeys: String, CodingKey {
         case id, quality
-        case fileType = "file_type"
+        case fileType
         case width, height, link
     }
 }

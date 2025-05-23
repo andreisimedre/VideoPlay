@@ -8,14 +8,44 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var networkService = NetworkService()
+    var columns = [GridItem(.adaptive(minimum: 160), spacing: 20)]
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+                ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(Query.allCases, id: \.self) { searchQuery in
+                            QueryTag(query: searchQuery.rawValue, isSelected: networkService.selectedQuery == searchQuery)
+                                .onTapGesture {
+                                    networkService.selectedQuery = searchQuery
+                                }
+                        }
+                    }
+                }
+                
+                ScrollView {
+                    if networkService.videos.isEmpty {
+                        ProgressView()
+                    } else {
+                        LazyVGrid(columns: columns, spacing: 20) {
+                            ForEach(networkService.videos, id: \.id) { video in
+                                NavigationLink {
+                                    VideoView(video: video)
+                                } label: {
+                                    VideoCardView(video: video)
+                                }
+                            }
+                        }
+                        .padding()
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .background(Color("AccentColor"))
+            .navigationBarHidden(true)
         }
-        .padding()
     }
 }
 
